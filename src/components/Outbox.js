@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ListGroup,ListGroupItem,ControlLabel} from 'react-bootstrap';
+import {ListGroup,ListGroupItem,ControlLabel,Row,Col} from 'react-bootstrap';
 
 class Outbox extends Component {
     constructor(props){
@@ -7,21 +7,36 @@ class Outbox extends Component {
     }
 
     render () {
-        var message=null;
+        let outbox=this.props.message.filter((ob)=>
+            this.props.params.username==ob.from
+        )
+        let message=null;
         if(this.props.message!=null){
-            message=this.props.message.map((msg,i)=>  
+            message=outbox.map((msg,i)=>  
                 <ListGroupItem key={i}>
-                    <div><ControlLabel>To : {msg.to}</ControlLabel></div>
-                    <div><ControlLabel>Subject : {msg.subject}</ControlLabel></div>
-                    <div><ControlLabel>Content : {msg.content}</ControlLabel></div>
+                    <Row >
+                        <Col md={1}>
+                            {msg.to}
+                        </Col>
+                        <Col md={1}>
+                            {msg.subject}
+                        </Col>
+                        <Col md={1}>
+                            {msg.content}
+                        </Col>
+                    </Row>
                 </ListGroupItem>
             );
         }
         return (
             <div>
-                <ListGroup>
-                    {message}
-                </ListGroup>
+                <Row>
+                    <Col md={10} sm={12} xs={12} mdOffset={1} smOffset={1}>
+                        <ListGroup>
+                            {message}
+                        </ListGroup>
+                    </Col>
+                </Row>
             </div>
         )
     }

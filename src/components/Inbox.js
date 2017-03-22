@@ -1,20 +1,38 @@
 import React, { Component } from 'react'
+import { ListGroup, ListGroupItem, Label, Row, Col, ControlLabel } from 'react-bootstrap';
 
 class Inbox extends Component {
-    render () {
-        let msg=[],name="";
-        name=this.props.login.filter((uname)=>
-            this.props.params.username==uname.username
-        )[0].name;
-        msg=this.props.message.filter((m)=>
-            m.to==this.props.params.username
+    render() {
+        let inbox = this.props.message.filter((ib) =>
+            this.props.params.username == ib.to
         )
-        console.log(msg,name);
+        let message = null;
+        if (this.props.message != null) {
+            message = inbox.map((msg, i) =>
+                <ListGroupItem key={i}>
+                    <Row >
+                        <Col md={1}>
+                            {msg.from}
+                        </Col>
+                        <Col md={1}>
+                            {msg.subject}
+                        </Col>
+                        <Col md={10}>
+                            {msg.content}
+                        </Col>
+                    </Row>
+                </ListGroupItem>
+            );
+        }
         return (
             <div>
-                <div>
-                    
-                </div>
+                <Row>
+                    <Col md={10} sm={12} xs={12} mdOffset={1} smOffset={1}>
+                        <ListGroup>
+                            {message}
+                        </ListGroup>
+                    </Col>
+                </Row>
             </div>
         )
     }

@@ -18,12 +18,15 @@ class MailBox extends Component {
     }
 
     render () {
+        let name=this.props.login.filter((uname)=>
+            this.props.params.username==uname.username
+        )[0].name;
         return (
             <div>
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="#">React-Bootstrap</a>
+                            <a href="#">Welcome     {name}</a>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>

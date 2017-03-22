@@ -7,7 +7,8 @@ import { Router, Route, IndexRoute } from 'react-router';
 
 import store,{history} from './store';
 
-import {AppModule} from './components/AppModule';
+// import {AppModule} from './components/AppModule';
+import App from './components/App'
 import NewMail from './components/NewMail';
 import Outbox from './components/Outbox';
 import Inbox from './components/Inbox';
@@ -17,7 +18,7 @@ import MailBox from './components/MailBox';
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
-            <Route path="/" component={AppModule}>
+            <Route path="/" component={App}>
                 <IndexRoute component={Login} />
                 <Route path="/mailbox/:username" component={MailBox}>
                     <IndexRoute component={Inbox} />

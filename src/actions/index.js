@@ -11,9 +11,9 @@
      }
  }
 
- export function login(username,name,password){
+ export function signup(username,name,password){
      return{
-         type:'LOGIN',
+         type:'SIGN_UP',
          username,
          name,
          password

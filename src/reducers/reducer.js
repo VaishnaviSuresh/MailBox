@@ -12,7 +12,7 @@ export default function reducer(state=initialState,action){
             var data={to:action.to,subject:action.subject,content:action.content,from:action.from};
             return(Object.assign({},state,{message:[...state.message,data]}));
     
-        case 'LOGIN':
+        case 'SIGN_UP':
             var user={username:action.username,name:action.name,password:action.password}
             return (Object.assign({},state,{login:[...state.login,user]}));
 
