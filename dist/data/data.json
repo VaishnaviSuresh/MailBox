@@ -1,0 +1,64 @@
+{
+    "message":[
+        {
+            "to":"548835",
+            "subject":"Test mail",
+            "content":"Test mail",
+            "from":"548818"
+        },
+        {
+            "to":"548835",
+            "subject":"Test mail",
+            "content":"Test mail",
+            "from":"548955"
+        },
+        {
+            "to":"548818",
+            "subject":"Test mail",
+            "content":"Test mail",
+            "from":"548835"
+        },
+        {
+            "to":"548818",
+            "subject":"Test mail",
+            "content":"Test mail",
+            "from":"548955"
+        },
+        {
+            "to":"548955",
+            "subject":"Test mail",
+            "content":"Test mail",
+            "from":"548835"
+        },
+        {
+            "to":"548955",
+            "subject":"Test mail",
+            "content":"Test mail",
+            "from":"548818"
+        },
+        {
+            "to":"548835",
+            "subject":"Test mail",
+            "content":"Test mail",
+            "from":"548955"
+        }
+    ],
+    "login":[
+        {
+            "username":"548835",
+            "name":"Vaishnavi",
+            "password":"vaishu"
+        },
+        {
+            "username":"548818",
+            "name":"Amrin",
+            "password":"amrin"
+        },
+        {
+            "username":"548955",
+            "name":"Sathyavani",
+            "password":"sathya"
+        }
+    ],
+    "err":""
+}
